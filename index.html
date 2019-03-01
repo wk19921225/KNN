@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手写识别案例</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        #drawCanvas {
+            border: 5px solid #e59448;
+        }
+
+        .drawContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .clear {
+            width: 40px;
+            height: 28px;
+            background-color: #e59448;
+            margin-top: 5px;
+            margin-left: 5px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .predictResult {
+            width: 580px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 50px;
+        }
+
+        .statisticalChart {
+            display: flex;
+            width: 100%;
+            height: 250px;
+            border-bottom: 1px solid #e0e0e0;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .statisticalChartItem {
+            width: 40px;
+            height: 0px;
+            background-color: #e59448;
+            transition: height 1s ease-in-out;
+        }
+        .predictActive {
+            height: 200px;
+        }
+
+        .statisticalTag {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .statisticalTagNumber {
+            width: 40px;
+            text-align: center;
+            color: #646164;
+            font-size: 28px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="drawContainer">
+        <h6>绘制区域</h6>
+        <canvas id="drawCanvas" style="width: 320px; height: 320px;"></canvas>
+        <button class="clear">清除</button>
+    </div>
+    <div class="predictResult">
+        <h6>预测结果</h6>
+        <div class="statisticalChart">
+            <div class="statisticalChartItem"></div>
+            <div class="statisticalChartItem"></div>
+            <div class="statisticalChartItem"></div>
+            <div class="statisticalChartItem"></div>
+            <div class="statisticalChartItem"></div>
+            <div class="statisticalChartItem"></div>
+            <div class="statisticalChartItem"></div>
+            <div class="statisticalChartItem"></div>
+            <div class="statisticalChartItem"></div>
+            <div class="statisticalChartItem"></div>
+        </div>
+        <div class="statisticalTag">
+            <div class="statisticalTagNumber">0</div>
+            <div class="statisticalTagNumber">1</div>
+            <div class="statisticalTagNumber">2</div>
+            <div class="statisticalTagNumber">3</div>
+            <div class="statisticalTagNumber">4</div>
+            <div class="statisticalTagNumber">5</div>
+            <div class="statisticalTagNumber">6</div>
+            <div class="statisticalTagNumber">7</div>
+            <div class="statisticalTagNumber">8</div>
+            <div class="statisticalTagNumber">9</div>
+        </div>
+    </div>
+</div>
+<div id="imageContainer"></div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!--<script src="ml.min.js"></script>-->
+<script src="./app.js"></script>
+</body>
+</html>
